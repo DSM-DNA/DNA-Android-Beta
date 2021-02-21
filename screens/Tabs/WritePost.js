@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Picker } from "@react-native-community/picker";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import WriteHeader from "../../assets/images/WriteHeader";
 import WriteBottom from "../../assets/images/WriteBottom";
 import WriteButton from "../../components/WriteButton";

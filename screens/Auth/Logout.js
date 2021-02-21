@@ -78,7 +78,7 @@ export default () => {
           </Container>
         </Touchable>
       </View>
-      <Text style={{fontSize:11, color:"grey"}}>Beta 1.0.2</Text>
+      <Text style={{fontSize:11, color:"grey"}}>Beta 1.1.1</Text>
     </View>
   );
 };
