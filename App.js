@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
+import AsyncStorage from '@react-native-community/async-storage';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { AuthProvider } from './AuthContext';
+import NavController from './components/NavController';
 
-export default function App() {
+export default () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const preLoad = async () => {
+    try{
+      const isLoggedIn = await AsyncStorage.getItem("isLoggedIn")
+      if(!isLoggedIn || isLoggedIn === "false"){
+        setIsLoggedIn(false);
+      } else {
+        setIsLoggedIn(true);
+      } 
+    } catch(e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    preLoad();
+  }, []);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    <AuthProvider isLoggedIn={isLoggedIn}>
+      <NavController />
+    </AuthProvider>
+  )
+};
