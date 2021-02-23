@@ -10,10 +10,9 @@ const Component = styled.TouchableOpacity`
   flex: 1;
   flex-direction: row;
   width: 93.6%;
-  height: 130px;
+  height: 160px;
   margin-top: 2%;
   margin-bottom: 3%;
-  height: 130px;
   border-radius: 10px;
   background-color: white;
   elevation: 6;
@@ -86,7 +85,8 @@ export default (props) => {
       })
       .catch(function (error) {
         console.log(error);
-        Alert.alert("데이터를 불러올수 없습니다.");
+        props.errfunc();
+        Alert.alert("게시물이 삭제되었습니다.");
       });
   };
 
@@ -101,6 +101,8 @@ export default (props) => {
     await axios
       .delete(`${baseUri}/timeline/${props.timelineId}`, config)
       .then(function (response){
+        console.log(response);
+
         GetPost();
       })
       .catch(function (error) {

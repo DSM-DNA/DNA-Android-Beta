@@ -45,7 +45,7 @@ const Submit = styled.TouchableOpacity`
   right: 0;
 `;
 
-export default ({ route }) => {
+export default ({ route, navigation }) => {
   const post = route.params;
   const [comments, setComments] = useState(null);
   const [count, setCount] = useState(0);
@@ -141,6 +141,7 @@ export default ({ route }) => {
             name={post.name}
             timelineId={post.timelineId}
             title={post.title}
+            errfunc={() => navigation.pop()}
           />
         </View>
       </View>
