@@ -68,6 +68,8 @@ const _View = styled.View`
   width: 92%;
   height: 100%;
   margin-top: 4%;
+  alignItems: flex-start;
+  justifyContent: flex-start;
 `;
 
 const Text = styled.Text`
@@ -92,31 +94,36 @@ export default ({ navigation }) => {
     const token = await GetToken();
     const req_token = "Bearer " + token;
 
-    titleInput.onChangeText("");
-    textInput.onChangeText("");
-
     const config = {
       headers: { Authorization: req_token },
     };
-
-    await axios
-      .post(
-        `${baseUri}/timeline`,
-        {
-          type: value,
-          title: title,
-          content: text,
-        },
-        config
-      )
-      .catch(function (error) {
-        Alert.alert("게시물등록에 실패했습니다.");
-        console.log(error);
-      });
-    setLoading(false);
-    navigation.navigate("Home");
-    Keyboard.dismiss();
-    Alert.alert("게시글 작성에 성공하였습니다.");
+    if(title !== "" && text !== ""){
+      await axios
+        .post(
+          `${baseUri}/timeline`,
+          {
+            type: value,
+            title: title,
+            content: text,
+          },
+          config
+        )
+        .catch(function (error) {
+          Alert.alert("게시물등록에 실패했습니다.");
+          console.log(error);
+        });
+      titleInput.onChangeText("");
+      textInput.onChangeText("");
+      setLoading(false);
+      navigation.navigate("Home");
+      Keyboard.dismiss();
+      Alert.alert("게시글 작성에 성공하였습니다.");
+    } else {
+      setLoading(false);
+      Keyboard.dismiss();
+      Alert.alert("내용을 확인해주세요.");
+    }
+    
   };
   return (
     <Container>
@@ -154,7 +161,7 @@ export default ({ navigation }) => {
               {...textInput}
               fontSize={16}
               placeholder="  내용을 입력해주세요 (100자 이내)"
-              style={{ flexShrink: 1 }}
+              style={{ flexShrink: 1, width:"100%", height:"70%", textAlign:"left", textAlignVertical:"top"}}
               multiline={true}
             />
           </_View>
