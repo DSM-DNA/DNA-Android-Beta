@@ -135,7 +135,7 @@ export default (props) => {
         <Name_Title style={{ fontSize: 20 }}>{props.name}</Name_Title>
         <Date_Text
           style={{ fontSize: 15 }}
-        >{`${date.getFullYear()}년 ${date.getMonth()}월`}</Date_Text>
+        >{`${date.getFullYear()}년 ${date.getMonth() + 1}월`}</Date_Text>
         <Day style={{ fontSize: 20 }}>{`${
           date.getDay() < 10 ? "0" + date.getDay() : date.getDay()
         }일`}</Day>
