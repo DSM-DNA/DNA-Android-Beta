@@ -2,6 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import styled from "styled-components";
 import LogoutBack from "../../assets/images/LogoutBack";
+import { useLogOut } from "../../AuthContext";
 
 const Image = styled.View`
   width: 68%;
@@ -41,6 +42,8 @@ const Text = styled.Text`
 `;
 
 export default () => {
+  const logOut = useLogOut();
+
   const GetToken = async () => {
     const token = await AsyncStorage.getItem("jwt");
     return token;
@@ -78,7 +81,7 @@ export default () => {
           </Container>
         </Touchable>
       </View>
-      <Text style={{fontSize:11, color:"grey"}}>Beta 1.2</Text>
+      <Text style={{fontSize:11, color:"grey"}}>Beta 1.3</Text>
     </View>
   );
 };

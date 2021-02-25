@@ -118,11 +118,11 @@ export default ({ navigation }) => {
   };
   return (
     <>
-      <View>
+      <View> 
         <Header>
           <MainHeader />
-          <TouchableOpacity onPress={() => confirmAlert()}>
-            <Text>Logout</Text>
+          <TouchableOpacity onPress={() => null}> //confirmAlert()
+            <Text>{null}</Text>
           </TouchableOpacity>
         </Header>
         <Notice>
