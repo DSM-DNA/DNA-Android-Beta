@@ -121,7 +121,7 @@ export default ({ navigation }) => {
       <View> 
         <Header>
           <MainHeader />
-          <TouchableOpacity onPress={() => null}> //confirmAlert()
+          <TouchableOpacity onPress={() => confirmAlert()}> 
             <Text>{null}</Text>
           </TouchableOpacity>
         </Header>
