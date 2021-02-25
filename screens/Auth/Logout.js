@@ -1,8 +1,12 @@
+import AsyncStorage from "@react-native-community/async-storage";
+import axios from "axios";
 import React from "react";
 import { View } from "react-native";
 import styled from "styled-components";
 import LogoutBack from "../../assets/images/LogoutBack";
 import { useLogOut } from "../../AuthContext";
+
+const baseUri = "http://121.66.14.43:9191";
 
 const Image = styled.View`
   width: 68%;
@@ -50,10 +54,12 @@ export default () => {
   };
 
   const Logout = async () => {
-    const token = GetToken;
-    axios.get(`${baseUri}/logout?${token}`).catch(function (error) {
-      console.log(error);
-    });
+    const token = GetToken();
+    axios
+      .get(`${baseUri}/logout?${token}`)
+      .catch(function (error) {
+        console.log(error);
+      });
     logOut();
   };
 
