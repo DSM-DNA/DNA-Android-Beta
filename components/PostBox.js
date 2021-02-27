@@ -137,7 +137,7 @@ export default (props) => {
           style={{ fontSize: 15 }}
         >{`${date.getFullYear()}년 ${date.getMonth() + 1}월`}</Date_Text>
         <Day style={{ fontSize: 20 }}>{`${
-          date.getDay() < 10 ? "0" + date.getDay() : date.getDay()
+          date.getDate() - 1 < 10 ? "0" + date.getDate() - 1 : date.getDate() - 1
         }일`}</Day>
       </Header>
       <Bottom>
