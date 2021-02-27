@@ -7,7 +7,7 @@ import AuthButton from "../../components/AuthButton";
 import AuthInput from "../../components/AuthInput";
 import useInput from "../../hooks/useInput";
 
-const baseUri = "http://121.66.14.43:9191";
+const baseUri = "http://211.38.86.92:8080";
 
 const TestContainer = styled.View`
   flex: 1;
