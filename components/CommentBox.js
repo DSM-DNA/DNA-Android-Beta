@@ -4,7 +4,7 @@ import React from "react";
 import { Alert } from "react-native";
 import styled from "styled-components";
 
-const baseUri = "http://121.66.14.43:9191";
+const baseUri = "http://211.38.86.92:8080";
 
 const Container = styled.View`
   flex: 1;
