@@ -4,13 +4,13 @@ import React from "react";
 import { Alert } from "react-native";
 import styled from "styled-components";
 
-const baseUri = "http://121.66.14.43:9191";
+const baseUri = "http://211.38.86.92:8080";
 
 const Component = styled.TouchableOpacity`
   flex: 1;
   flex-direction: row;
   width: 93.6%;
-  height: 160px;
+  height: 180px;
   margin-top: 2%;
   margin-bottom: 3%;
   border-radius: 10px;

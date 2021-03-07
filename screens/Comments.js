@@ -124,12 +124,12 @@ export default ({ route, navigation }) => {
         {post.type === "DIVER" && <GHeader />}
         {post.type === "COMMON" && <CHeader />}
       </View>
-      <View style={{ height: 130, width: "100%", backgroundColor: "yellow" }}>
+      <View style={{ height: 190, width: "100%", backgroundColor: "white" }}>
         <View
           style={{
             backgroundColor: "white",
             width: "100%",
-            height: 130,
+            height: 180,
             alignItems: "center",
           }}
         >
