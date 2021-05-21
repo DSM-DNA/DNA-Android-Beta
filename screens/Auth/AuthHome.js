@@ -1,4 +1,6 @@
+import AsyncStorage from "@react-native-community/async-storage";
 import React from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import GlobeSvg from "../../assets/images/globe.js";
 import AuthButton from "../../components/AuthButton.js";

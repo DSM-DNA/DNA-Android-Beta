@@ -10,7 +10,10 @@ export default () => {
     try{
       const isLoggedIn = await AsyncStorage.getItem("isLoggedIn")
       if(!isLoggedIn || isLoggedIn === "false"){
+        const token = await AsyncStorage.getItem("jwt");
+        console.log(token);
         setIsLoggedIn(false);
+
       } else {
         setIsLoggedIn(true);
       } 

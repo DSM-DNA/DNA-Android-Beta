@@ -65,6 +65,7 @@ export default ({navigation}) => {
       const res_obj = JSON.stringify(response.data);
       const Obj = JSON.parse(res_obj);
       const token = Obj["access-token"];
+      console.log("Handle Login Access Token : " + token);
       logIn(token);
     })
     .catch(function (error) {
