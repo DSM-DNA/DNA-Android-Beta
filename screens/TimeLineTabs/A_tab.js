@@ -8,9 +8,9 @@ import PTRView from "react-native-pull-to-refresh";
 import styled from "styled-components";
 import AHeader from "../../assets/Header/AHeader";
 import PostBox from "../../components/PostBox";
-import baseUri from "../../env";
+import BaseUri from "../../env";
 
-const baseUri = baseUri.Server;
+const baseUri = BaseUri.Server;
 
 const View = styled.View`
   background-color: white;
